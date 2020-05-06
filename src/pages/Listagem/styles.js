@@ -11,18 +11,6 @@ export default styled.div`
   margin-top: 1.5rem;
   margin-bottom: .5rem;
 
-  span{
-    display: flex;
-    height: 1.5rem;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .last-line{
-    border-bottom: 1px solid black;
-    margin-bottom: 1rem;
-  }
-
   a{
     display: flex;
     flex-direction: row-reverse;

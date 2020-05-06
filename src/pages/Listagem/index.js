@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
+import Post from './Post';
+
 export default () => {
 
   const dispatch = useDispatch();
@@ -22,8 +24,7 @@ export default () => {
 
   return (
     <Container>
-      <span>{post.titulo}</span>
-      <span className='last-line'>{post.conteudo}</span>
+      { post && <Post titulo={post.titulo} conteudo={post.conteudo} /> }
       <Link to='/add'>Adicionar</Link>
     </Container>
   );
