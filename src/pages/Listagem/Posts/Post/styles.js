@@ -13,4 +13,11 @@ export default styled.div`
     align-items: center;
     justify-content: center;
   }
+
+  .conteudo{
+    display: flex;
+    height: fit-content;
+    max-height: 10rem;
+    overflow-y: scroll;
+  }
 `;

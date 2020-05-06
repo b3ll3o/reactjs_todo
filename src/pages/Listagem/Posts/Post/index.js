@@ -7,7 +7,7 @@ export default ({titulo, conteudo}) => {
   return(
     <Container>
       <span>{titulo && titulo}</span>
-      <span>{conteudo && conteudo}</span>
+      <div className="conteudo">{conteudo && conteudo}</div>
     </Container>
   )
 }

@@ -6,17 +6,17 @@ import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import Post from './Post';
+import Posts from './Posts';
 
 export default () => {
 
   const dispatch = useDispatch();
-  const { post } = useSelector(state => state);
+  const { posts } = useSelector(state => state);
 
   useEffect(() => {
 
     const fetch = () => {
-      dispatch({ type: 'GET_POST' });
+      dispatch({ type: 'GET_POSTS' });
     }
 
     fetch();
@@ -24,7 +24,7 @@ export default () => {
 
   return (
     <Container>
-      { post && <Post titulo={post.titulo} conteudo={post.conteudo} /> }
+      { posts && <Posts posts={posts} /> }
       <Link to='/add'>Adicionar</Link>
     </Container>
   );

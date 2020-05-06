@@ -1,37 +1,16 @@
 
-import { put, takeLatest } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
 
-const KEY = 'post';
-
-const create = (titulo, conteudo) => {
-  localStorage.setItem(KEY, JSON.stringify({ titulo, conteudo }));
-};
-
-const read = () => (
-  JSON.parse(localStorage.getItem(KEY))
-);
+import LocalStorageService from '../../services/LocalStorageService';
 
 function addEffect(action){
 
   const { titulo, conteudo } = action.payload;
-  create(titulo, conteudo);
-}
-
-function* readEffect(action){
-
-  const post = read();
-
-  yield put({ 
-    type: 'GET_POST_SUCCESS', 
-    payload: {
-      post
-    }
-  });
+  LocalStorageService.create({ titulo, conteudo });
 }
 
 function* mySaga(){
   yield takeLatest('ADD_POST', addEffect);
-  yield takeLatest('GET_POST', readEffect);
 }
 
 export default mySaga;
