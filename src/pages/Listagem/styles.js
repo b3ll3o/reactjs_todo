@@ -14,5 +14,6 @@ export default styled.div`
   a{
     display: flex;
     flex-direction: row-reverse;
+    margin-bottom: 1.5rem;
   }
 `;

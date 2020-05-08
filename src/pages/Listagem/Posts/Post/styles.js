@@ -17,7 +17,5 @@ export default styled.div`
   .conteudo{
     display: flex;
     height: fit-content;
-    max-height: 10rem;
-    overflow-y: scroll;
   }
 `;
